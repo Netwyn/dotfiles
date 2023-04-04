@@ -1,8 +1,42 @@
 
 require('lazy').setup({
 
-  -- Bufferline
-  { 'akinsho/bufferline.nvim',       version = '*', opts = { options = {auto_start = true } } },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    config = function()
+      vim.g.catppuccin_flavour = 'mocha'
+      vim.cmd.colorscheme 'catppuccin'
+    end,
+  },
+
+  {
+    "utilyre/barbecue.nvim",
+    name = "barbecue",
+    version = "*",
+    dependencies = {
+      "SmiteshP/nvim-navic",
+      "nvim-tree/nvim-web-devicons", -- optional dependency
+    },
+    opts = {
+      -- configurations go here
+    },
+  },
+
+  { "nvim-lua/plenary.nvim" },
+
+  { "MunifTanjim/nui.nvim" },
+
+  {
+    'akinsho/bufferline.nvim',       version = '*', opts = {
+      options = {
+        auto_start = true,
+      },
+    }
+  },
+
+  { 'NvChad/nvim-colorizer.lua' },
 
   -- Discord RPC
   { 'andweeb/presence.nvim',         version = '*' },
@@ -107,23 +141,6 @@ require('lazy').setup({
     },
   },
 
-  -- {
-  --   -- Theme inspired by Atom
-  --   'navarasu/onedark.nvim',
-  --   priority = 1000,
-  --   config = function()
-  --     vim.cmd.colorscheme 'onedark'
-  --   end,
-  -- },
-
-  {
-    'morhetz/gruvbox',
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'gruvbox'
-    end,
-  },
-
   {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
@@ -132,11 +149,23 @@ require('lazy').setup({
       options = {
         icons_enabled = false,
         -- theme = 'onedark',
-        theme = 'gruvbox_dark',
+        -- theme = 'gruvbox_dark',
+        -- theme = 'nord',
+        theme = 'catppuccin',
         component_separators = '|',
         section_separators = '',
       },
     },
+    config = function()
+      require('lualine').setup({
+        options = {
+          icons_enabled = false,
+          theme = 'catppuccin',
+          component_separators = '|',
+          section_separators = '',
+        },
+      })
+    end,
   },
 
   {
