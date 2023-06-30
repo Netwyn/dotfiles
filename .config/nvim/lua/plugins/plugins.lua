@@ -2,6 +2,11 @@
 require('lazy').setup({
 
   {
+      "ms-jpq/chadtree",
+
+  },
+
+  {
     "catppuccin/nvim",
     name = "catppuccin",
     priority = 1000,

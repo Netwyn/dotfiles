@@ -20,8 +20,31 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 require('plugins.plugins')
-require('config.mappings')
+require('plugins.custom')
 require('config.plugins')
+require('config.mappings')
+
+require('lspconfig').pylsp.setup{
+  cmd = { "pylsp" },
+  settings = {
+    pylsp = {
+      plugins = {
+        rope_autoimport = {
+          enabled = true,
+        },
+        pycodestyle = {
+          enabled = false,
+        },
+        pyflakes = {
+          enabled = false,
+        },
+        pylint = {
+          enabled = false,
+        },
+      },
+    },
+  },
+}
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
