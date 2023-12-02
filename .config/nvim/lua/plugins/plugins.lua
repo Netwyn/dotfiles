@@ -3,7 +3,6 @@ require('lazy').setup({
 
   {
       "ms-jpq/chadtree",
-
   },
 
   {
@@ -71,7 +70,7 @@ require('lazy').setup({
           file_ignore_patterns = {
             "node_modules",
             "dist",
-            -- "target",
+            "target",
           }
         }
       })

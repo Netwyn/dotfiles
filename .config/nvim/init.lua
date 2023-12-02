@@ -12,8 +12,10 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+vim.cmd('set expandtab sw=4 sts=4')
 vim.cmd('set tabstop=4')
 vim.cmd('set shiftwidth=4')
+vim.cmd('set smartindent')
 vim.cmd('set expandtab')
 
 vim.g.mapleader = ' '

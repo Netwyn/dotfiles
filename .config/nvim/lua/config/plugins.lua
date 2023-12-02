@@ -30,4 +30,5 @@ vim.api.nvim_set_var('chadtree_settings', chadtree_settings)
 vim.g.catppuccin_flavour = 'mocha'
 require('catppuccin').setup()
 vim.cmd [[colorscheme catppuccin]]
+vim.cmd [[set expandtab sw=4 sts=4]]
 
